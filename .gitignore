@@ -1,0 +1,23 @@
+# Environment variables and secrets
+.env
+.env.*
+!.env.example
+
+# Dependencies
+node_modules/
+
+# Build outputs
+dist/
+build/
+out/
+release/
+*.tsbuildinfo
+
+# Logs
+*.log
+npm-debug.log*
+
+# OS and editor
+.DS_Store
+Thumbs.db
+.vscode/

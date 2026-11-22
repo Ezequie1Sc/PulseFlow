@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'none'; script-src 'self'; style-src 'self'; font-src 'self'; img-src 'self'; connect-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'"
+    />
+    <title>PulseFlow</title>
+    <link rel="stylesheet" href="style.css" />
+    <script defer src="app.js"></script>
+  </head>
+  <body>
+    <header>
+      <div class="bar">
+        <strong class="brand"
+          ><img src="icons/activity.svg" alt="" />PulseFlow</strong
+        >
+        <div class="statusbar">
+          <span id="sdk">Checking SDK</span><span id="cam">Camera off</span
+          ><button id="privacy">
+            <img src="icons/shield.svg" alt="" />Privacy
+          </button>
+        </div>
+      </div>
+    </header>
+    <main>
+      <section class="hero">
+        <h1>Your body, in real time.</h1>
+        <p>Understand your breathing and pulse through your camera.</p>
+        <button class="primary" id="enter">
+          Get Started <img src="icons/arrow-right.svg" alt="" />
+        </button>
+      </section>
+      <section id="welcome" class="intro">
+        <img src="icons/shield.svg" alt="" />
+        <div>
+          <h2>Before your first session</h2>
+          <p>
+            Your camera stays off until you allow monitoring. You can also try
+            guided breathing with the camera off.
+          </p>
+          <small id="initial">Checking configuration…</small>
+        </div>
+      </section>
+      <div id="dashboard" hidden>
+        <section class="sectionhead">
+          <h2>Live overview</h2>
+          <span id="signal" role="status">Waiting for signal</span>
+        </section>
+        <div class="grid">
+          <article>
+            <h3><img src="icons/heart.svg" alt="" />Heart Rate</h3>
+            <div class="metric"><b id="pulseValue">—</b> BPM</div>
+            <canvas
+              id="pulseChart"
+              aria-label="Observed heart rate history"
+            ></canvas>
+          </article>
+          <article>
+            <h3><img src="icons/wind.svg" alt="" />Breathing Rate</h3>
+            <div class="metric"><b id="breathValue">—</b> br/min</div>
+            <canvas
+              id="breathChart"
+              aria-label="Observed breathing rate history"
+            ></canvas>
+          </article>
+        </div>
+        <div class="grid lower">
+          <article>
+            <h3><img src="icons/video.svg" alt="" />Camera</h3>
+            <div class="preview">
+              <canvas id="preview" hidden></canvas
+              ><span id="previewHint">Camera off</span>
+            </div>
+            <label for="devices">Camera source</label>
+            <div class="controls">
+              <select id="devices"></select
+              ><button id="refresh">Refresh</button>
+            </div>
+            <p id="issue" role="status"></p>
+          </article>
+          <article>
+            <h3><img src="icons/wind.svg" alt="" />Breathing Session</h3>
+            <div class="exercise">
+              <div id="circle"></div>
+              <strong id="phase" aria-live="polite">Ready</strong
+              ><output id="timer">01:00</output>
+            </div>
+            <div class="controls">
+              <label
+                >Inhale (s)<input
+                  type="number"
+                  id="inhale"
+                  value="4"
+                  min="1"
+                  max="15" /></label
+              ><label
+                >Exhale (s)<input
+                  type="number"
+                  id="exhale"
+                  value="6"
+                  min="1"
+                  max="15"
+              /></label>
+            </div>
+            <div class="controls">
+              <button class="primary" id="exerciseStart">Start</button
+              ><button id="end" disabled>End Session</button>
+            </div>
+          </article>
+        </div>
+        <section id="summary" hidden>
+          <h2>Session Summary</h2>
+          <dl id="stats"></dl>
+          <button id="newSession">Start New Session</button>
+        </section>
+      </div>
+      <footer>
+        <span>PulseFlow</span><span>General wellness use only</span>
+      </footer>
+    </main>
+    <dialog id="dialog" aria-labelledby="dialogTitle">
+      <h2 id="dialogTitle">Camera &amp; privacy</h2>
+      <p>
+        SmartSpectra uses your camera to estimate pulse and breathing rate on
+        this device. Your Presage key is used for online authentication.
+      </p>
+      <p>
+        Presage normally collects session summaries and device diagnostics.
+        PulseFlow disables SDK telemetry. Its preview, history and summary stay
+        in memory. Clear session data or close the app to discard them.
+      </p>
+      <div class="controls">
+        <button id="cancel">Not Now</button
+        ><button id="allow" class="primary">Allow Camera</button
+        ><button id="erase" hidden>Clear session data</button>
+      </div>
+    </dialog>
+    <aside id="toasts" aria-label="Notifications"></aside>
+  </body>
+</html>
