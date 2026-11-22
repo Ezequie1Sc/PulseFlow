@@ -1,104 +1,147 @@
 # PulseFlow
 
-**Contactless physiological sensing. Thoughtfully designed.**
+### Your body, in real time.
 
-A privacy-conscious desktop application that transforms an ordinary webcam into a real-time human-sensing experience, powered by the **Presage SmartSpectra SDK**.
+**A privacy-conscious desktop experience for real-time contactless physiological sensing and guided breathing, powered by the Presage SmartSpectra SDK.**
 
 Built for the **Presage SmartSpectra SDK Challenge 2026**.
 
-[![Electron](https://img.shields.io/badge/Electron-Desktop-18181B?style=flat-square)](https://www.electronjs.org/)
-[![TypeScript](https://img.shields.io/badge/TypeScript-5.x-18181B?style=flat-square)](https://www.typescriptlang.org/)
-[![SmartSpectra](https://img.shields.io/badge/Powered%20by-SmartSpectra-18181B?style=flat-square)](https://presagetech.com/)
-[![Platform](https://img.shields.io/badge/Platform-Windows%20x64-18181B?style=flat-square)](#getting-started)
-[![Challenge](https://img.shields.io/badge/DEV-Challenge%202026-18181B?style=flat-square)](https://dev.to/challenges)
+[![Electron](https://img.shields.io/badge/Electron-Desktop-18181B?style=flat-square&logo=electron)](https://www.electronjs.org/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.x-18181B?style=flat-square&logo=typescript)](https://www.typescriptlang.org/)
+[![SmartSpectra](https://img.shields.io/badge/Powered_by-SmartSpectra-18181B?style=flat-square)](https://presagetech.com/)
+[![Windows](https://img.shields.io/badge/Windows-x64-18181B?style=flat-square&logo=windows)](#getting-started)
+[![DEV Challenge](https://img.shields.io/badge/DEV-Challenge_2026-18181B?style=flat-square)](https://dev.to/challenges)
 
 ---
 
-![PulseFlow — Main Experience](assets/hero.png)
+![PulseFlow Main Experience](assets/hero.png)
+
+<p align="center">
+  <strong>Contactless sensing. Real measurements. Thoughtful interaction.</strong>
+</p>
+
+<p align="center">
+  <a href="https://youtu.be/8ztd4aoxduk"><strong>Watch Demo</strong></a>
+  &nbsp;&nbsp;|&nbsp;&nbsp;
+  <a href="https://github.com/Ezequie1Sc/PulseFlow"><strong>Source Code</strong></a>
+  &nbsp;&nbsp;|&nbsp;&nbsp;
+  <a href="https://smartspectra.presagetech.com/docs/nodejs/"><strong>SmartSpectra Documentation</strong></a>
+</p>
 
 ## Overview
 
-**Your body, in real time.**
+**PulseFlow** is a desktop application that transforms a standard webcam into an interactive human-sensing experience.
 
-PulseFlow is an experimental human-sensing desktop application that combines contactless physiological monitoring with a guided breathing experience.
+Powered by the **Presage SmartSpectra SDK**, it estimates physiological signals such as heart rate and breathing rate without requiring wearable devices or specialized external sensors.
 
-Using a standard webcam and Presage SmartSpectra, PulseFlow estimates physiological signals such as heart rate and breathing rate without requiring wearable devices.
+PulseFlow brings these measurements into a minimal, interactive interface where users can observe live physiological data, follow guided breathing exercises, and review session summaries.
 
-The application presents these measurements through a clean, interactive dashboard and allows users to follow guided breathing sessions while observing their physiological signals.
+The project explores a simple idea:
 
-The experience is built around three principles:
+> What if understanding your body's signals could begin with something as familiar as your webcam?
 
-- **Real signals:** Physiological values originate from the SmartSpectra SDK, not simulated datasets.
-- **Thoughtful interaction:** An approachable interface combines live measurements, guided exercises, and session summaries.
-- **Privacy and control:** Explicit consent, user-controlled capture, clear measurement states, and responsible data handling are central to the experience.
+PulseFlow combines contactless sensing with thoughtful user interaction, clear feedback, and explicit consent.
 
-PulseFlow is intended for general wellness exploration and technical demonstration. It is not a medical device.
+The application is intended for general wellness exploration and technical demonstration, not medical diagnosis or treatment.
+
+---
+
+## Watch the Demo
+
+The demonstration showcases PulseFlow running on Windows with a real webcam and the Presage SmartSpectra SDK.
+
+It highlights live physiological measurements, guided breathing, and the completed session summary.
+
+[![Watch PulseFlow Demo](https://img.youtube.com/vi/8ztd4aoxduk/maxresdefault.jpg)](https://youtu.be/8ztd4aoxduk)
+
+**[Watch the full PulseFlow demonstration on YouTube](https://youtu.be/8ztd4aoxduk)**
+
+### What the demonstration covers
+
+1. PulseFlow desktop interface.
+2. Camera-based monitoring.
+3. Live heart rate estimation.
+4. Live breathing rate estimation.
+5. Real-time physiological charts.
+6. Guided breathing interaction.
+7. Session completion and summary.
+
+The demonstration uses real SmartSpectra measurements. The camera imagery can be anonymized for presentation without substituting the physiological data.
 
 ---
 
 ## The Experience
 
-### 01. A simpler way to explore physiological signals
+### 01 — A Minimal Human-Sensing Interface
 
-PulseFlow introduces contactless sensing through a minimal desktop experience.
+PulseFlow follows a clean, monochromatic design direction inspired by modern developer tools and the Geist design language.
 
-Rather than overwhelming users with technical information, the interface focuses on clarity, readability, and direct interaction.
-
-The visual direction is inspired by the minimalism of contemporary developer tools, with monochromatic surfaces, restrained motion, subtle borders, and precise typography.
+The interface emphasizes clarity and readability, allowing the physiological information to remain the focus.
 
 ![PulseFlow Application](assets/aplicacion%20funcionando.png)
 
-### 02. Real-time monitoring
+### 02 — Live Physiological Monitoring
 
-Heart rate and breathing rate are presented through clear numerical indicators and time-based charts.
+PulseFlow visualizes physiological measurements generated through SmartSpectra.
 
-The dashboard displays new measurements only when valid signals are available from SmartSpectra.
+The dashboard presents current values and time-based charts for accepted measurements.
 
-![Live Physiological Monitoring](assets/liveoverview.png)
+![PulseFlow Live Overview](assets/liveoverview.png)
 
-**Monitoring capabilities**
+**Available metrics**
 
-- Contactless heart rate estimation in BPM.
-- Contactless breathing rate estimation in breaths per minute.
-- Time-series visualization of accepted samples.
-- Camera and processing status feedback.
-- Signal-quality guidance.
-- Explicit empty states when measurements are unavailable.
+- Heart rate, measured in beats per minute (BPM).
+- Breathing rate, measured in breaths per minute (br/min).
+- Time-series charts of valid measurements.
+- Camera and processing status.
+- Signal-quality feedback.
 
-PulseFlow never fabricates physiological readings to populate its dashboard.
+PulseFlow does not populate its dashboard with simulated physiological readings.
 
-### 03. Explicit camera consent
+When valid measurements are unavailable, the interface displays an appropriate waiting state.
 
-Physiological sensing begins only after the user grants consent.
+### 03 — Camera Consent
 
-The application provides information about camera access and allows users to control monitoring.
+The application introduces camera-based monitoring through an explicit consent workflow.
 
-![Camera Consent](assets/cameraprivacyallow.png)
+Users are informed about the purpose of camera access before monitoring begins.
 
-### 04. Privacy by design
+![PulseFlow Camera Consent](assets/cameraprivacyallow.png)
 
-The application is designed to avoid unnecessary persistence of sensitive session data.
+### 04 — Privacy and Transparency
 
-Camera-based sensing should always be transparent, intentional, and controlled by the person being monitored.
+Responsible handling of camera-based sensing is a central part of the experience.
 
-![Privacy Information](assets/privacy.png)
+PulseFlow provides information about camera use and allows users to control monitoring.
 
-### 05. Meaningful session summaries
+![PulseFlow Privacy](assets/privacy.png)
 
-At the end of a guided breathing session, PulseFlow displays a concise summary of the activity.
+### 05 — Guided Breathing
 
-![Session Summary](assets/resultados.png)
+PulseFlow includes a guided breathing experience with a minimal animated indicator.
+
+Users can configure the inhalation and exhalation durations and control the session through start, pause, resume, and end actions.
+
+The animation is driven by the exercise timer independently of the physiological readings.
+
+This distinction ensures that guided movement is not presented as a measured physiological signal.
+
+### 06 — Session Summary
+
+After completing a guided breathing session, PulseFlow provides an overview of the activity and available physiological measurements.
+
+![PulseFlow Session Summary](assets/resultados.png)
 
 The summary includes:
 
-- Session duration.
+- Total session duration.
 - Average observed heart rate.
 - Average observed breathing rate.
-- Number of valid pulse samples.
-- Number of valid breathing samples.
+- Number of valid heart rate samples.
+- Number of valid breathing rate samples.
 - Session completion status.
 
-Averages are calculated from accepted measurements collected during the session. Missing data is not replaced with fabricated values.
+Averages are calculated from accepted SmartSpectra measurements rather than fabricated values.
 
 ---
 
@@ -106,62 +149,79 @@ Averages are calculated from accepted measurements collected during the session.
 
 | Feature | Description |
 |---|---|
-| Contactless monitoring | Estimate physiological signals through a supported webcam |
-| SmartSpectra integration | Receive live SDK events and structured measurements |
-| Heart rate | Display valid pulse estimates in BPM |
-| Breathing rate | Display valid respiration estimates in breaths per minute |
-| Live charts | Visualize accepted physiological readings over time |
-| Guided breathing | Follow configurable inhale and exhale phases |
-| Session controls | Start, pause, resume, and end an exercise |
-| Session summaries | Review duration, averages, and valid sample counts |
-| Camera selection | Select an available camera device |
-| Consent workflow | Require explicit consent before monitoring |
-| Notifications | Display contextual feedback without interrupting the experience |
-| Signal validation | Reject unavailable or invalid readings rather than simulating results |
+| Contactless physiological sensing | Uses a standard webcam with the SmartSpectra SDK |
+| Live heart rate | Displays valid heart rate estimates in BPM |
+| Live breathing rate | Displays valid breathing rate estimates in br/min |
+| Real-time charts | Visualizes accepted measurements over time |
+| Camera selection | Supports choosing an available camera |
+| Signal validation | Handles unavailable, unstable, or invalid readings |
+| Guided breathing | Configurable inhalation and exhalation phases |
+| Session controls | Start, pause, resume, and end |
+| Session summaries | Displays duration, averages, and sample counts |
+| Camera consent | Explicit authorization before monitoring |
+| Toast notifications | Contextual feedback for application events |
+| Error handling | Descriptive SDK, camera, and connectivity states |
+| Desktop security | Isolated Electron renderer and restricted IPC communication |
 
 ---
 
-## How It Works
+## How SmartSpectra Powers PulseFlow
 
-PulseFlow connects to a supported webcam through the official Presage SmartSpectra Node.js SDK.
+SmartSpectra is the core sensing technology behind the application.
 
-The SDK processes camera input and emits physiological measurement and validation events.
+The Node.js SDK processes camera input and provides physiological estimates and signal-validation information.
 
-PulseFlow decodes the SDK measurements, applies validity checks, and updates the desktop interface with accepted values.
+PulseFlow receives and processes these events before updating its dashboard.
+
+### Processing Pipeline
 
 ```text
-              STANDARD WEBCAM
-                     |
-                     v
-          PRESAGE SMARTSPECTRA
-                     |
-          +----------+----------+
-          |                     |
-          v                     v
-    Signal Validation      SDK Measurements
-          |                     |
-          +----------+----------+
-                     |
-                     v
-             Measurement Layer
-                     |
-              Valid Samples
-                     |
-                     v
-              Electron IPC
-                     |
-                     v
-               PulseFlow UI
-                     |
-          +----------+----------+
-          |                     |
-          v                     v
-      Live Charts         Session Summary
++-----------------------------+
+|        Standard Webcam      |
++--------------+--------------+
+               |
+               v
++-----------------------------+
+|   Presage SmartSpectra SDK  |
+|                             |
+|   Camera Processing         |
+|   Signal Validation         |
+|   Physiological Estimation  |
++--------------+--------------+
+               |
+               v
++-----------------------------+
+|       Capture Service       |
+|        src/capture.ts       |
++--------------+--------------+
+               |
+               v
++-----------------------------+
+|      Measurement Layer      |
+|     src/measurements.ts     |
+|                             |
+|  Decode / Validate / Filter |
++--------------+--------------+
+               |
+               v
++-----------------------------+
+|        Electron IPC         |
++--------------+--------------+
+               |
+               v
++-----------------------------+
+|        PulseFlow UI         |
+|                             |
+|  Live Metrics               |
+|  Physiological Charts       |
+|  Guided Breathing           |
+|  Session Summary            |
++-----------------------------+
 ```
 
-### SmartSpectra Integration
+### Requested Metrics
 
-The application requests these metrics:
+The application requests two SmartSpectra measurements:
 
 ```typescript
 requestedMetrics: [
@@ -170,175 +230,240 @@ requestedMetrics: [
 ]
 ```
 
-The integration handles SDK events associated with:
+### SDK Events
 
-- Processing status.
-- Signal validation.
-- Physiological metrics.
-- Camera video output.
-- SDK errors and interruptions.
+The implementation handles SmartSpectra events including:
 
-Measurement messages are decoded through the SDK's Protocol Buffers support.
+- `processingStatus` — reports processing lifecycle states.
+- `validationStatus` — provides signal-quality feedback.
+- `metrics` — delivers physiological measurement messages.
+- `videoOutput` — supplies camera frames for preview.
+- `error` — reports SDK-related failures.
 
-### Actual measurements only
+Measurement messages are decoded using the SDK's Protocol Buffers support.
 
-PulseFlow intentionally distinguishes between a working camera and valid physiological data.
+### Data Integrity
 
-When a camera is active but no acceptable measurement is available, the interface displays:
+PulseFlow is designed to display only accepted physiological measurements.
+
+Its processing layer validates incoming samples and rejects values that do not meet the application's requirements.
+
+If SmartSpectra cannot provide a valid reading, PulseFlow displays:
 
 ```text
-Heart Rate:     —
-Breathing Rate: —
-Status: Waiting for signal
+Heart Rate      —
+Breathing Rate  —
+Status          Waiting for signal
 ```
 
-The application does not generate synthetic BPM values, artificial respiration rates, or fabricated session averages.
-
-### Signal quality requirements
-
-Reliable measurements depend on factors including:
-
-- Adequate lighting.
-- Visible face and upper-body framing.
-- Minimal movement.
-- Supported camera capture formats.
-- Sufficient effective frame rate.
-- Stable physiological signals.
-
-SmartSpectra may request adjustments when capture conditions are insufficient.
+The application does not generate artificial BPM values, breathing rates, or session averages.
 
 ---
 
-## Guided Breathing
+## Guided Breathing Experience
 
-PulseFlow includes a guided breathing exercise designed to complement real-time monitoring.
+PulseFlow complements live physiological sensing with a simple guided breathing session.
 
-Users can configure the duration of inhalation and exhalation phases and follow a minimal animated indicator.
+The default session lasts 60 seconds and uses configurable inhalation and exhalation intervals.
 
-The experience supports:
+### Session Controls
 
-- Starting a session.
-- Pausing and resuming.
-- Ending a session.
-- Configuring breathing phases.
-- Reviewing the completed session.
+- **Start:** begins the breathing exercise.
+- **Pause:** suspends session progression.
+- **Resume:** continues from the paused state.
+- **End Session:** finishes the current exercise.
+- **Start New Session:** resets the experience for another session.
 
-The animation follows the exercise timer, not fabricated physiological measurements.
+### Animation Synchronization
 
-Breathing guidance is independent of the measured respiration signal.
+The breathing indicator expands and contracts according to the configured phase durations.
 
-The exercise is a general wellness interaction, not a treatment or medical intervention.
+The timer and animation share the same session state.
+
+When paused, the phase progression is suspended. When resumed, it continues from the previous state.
+
+The animation is a guidance mechanism, not a physiological measurement.
+
+### Session Statistics
+
+During an active exercise, PulseFlow accumulates accepted physiological measurements.
+
+At completion, the application calculates available averages and valid sample counts for the session.
+
+Missing measurements are not replaced by simulated values.
 
 ---
 
-## Design & User Experience
+## Design Philosophy
 
-PulseFlow uses an original monochromatic design inspired by the clarity of Vercel's interface language and Geist typography.
+PulseFlow uses a minimal interface influenced by the visual clarity of Vercel and the Geist design language.
 
-### Visual principles
+The design focuses on making a potentially technical sensing experience approachable.
 
-- Minimal, dark desktop interface.
-- Neutral black, white, and gray palette.
-- Clear visual hierarchy.
-- Large, legible physiological metrics.
-- Fine borders and restrained surfaces.
-- Subtle animations and transitions.
-- Purposeful notification feedback.
-- Reusable UI components.
-- Accessible interaction patterns.
+### Visual Principles
 
-The objective is to make contactless human sensing feel understandable and approachable rather than overly clinical or technical.
+- Monochromatic dark interface.
+- Geist Sans and Geist Mono typography.
+- Strong information hierarchy.
+- Large numerical measurements.
+- Subtle borders and neutral surfaces.
+- Restrained animations.
+- Clear interactive controls.
+- Contextual notifications.
+- Accessible interface states.
+
+The application avoids unnecessary visual distractions, allowing the user to focus on the live data and breathing experience.
 
 ---
 
 ## Technology Stack
 
-| Technology | Role |
+| Technology | Purpose |
 |---|---|
-| Electron | Desktop runtime and native application shell |
-| Node.js | Application services and SDK integration |
+| Electron | Windows desktop application runtime |
+| Node.js | Native SDK integration and application services |
 | TypeScript | Typed application logic |
-| Presage SmartSpectra SDK | Contactless physiological sensing |
-| Protocol Buffers | SDK measurement decoding |
-| HTML5 | User interface |
-| CSS | Layout, styling, and animations |
-| Canvas API | Camera preview and chart rendering |
-| Node.js Test Runner | Automated testing |
+| Presage SmartSpectra SDK 3.5.0 | Contactless physiological sensing |
+| Protocol Buffers | Physiological measurement decoding |
+| HTML5 | User interface structure |
+| CSS | Layout, typography, and animations |
+| Canvas API | Camera preview and data visualization |
+| Geist | Interface typography |
+| Lucide | Monochromatic iconography |
+| esbuild | Application bundling |
+| Node.js Test Runner | Automated tests |
 
-No dedicated backend or database is required for the desktop application.
+PulseFlow does not require a separate backend server or application database.
 
 ---
 
-## Project Structure
+## Project Architecture
+
+The project separates hardware access, SDK processing, application state, and visual presentation.
 
 ```text
 PulseFlow/
-├── assets/                 # Screenshots and documentation assets
-├── src/                    # Electron and SmartSpectra integration
-│   ├── main.ts             # Main process
-│   ├── capture.ts          # Native SDK capture lifecycle
-│   ├── camera.ts           # Camera discovery and preview
-│   ├── measurements.ts     # Measurement processing
-│   ├── errors.ts           # SDK error handling
-│   └── model.ts            # Shared application types
-├── ui/                     # Desktop interface
-│   ├── index.html
-│   ├── app.ts
-│   └── style.css
-├── tests/                  # Automated tests
-├── build.mjs               # Application build
-├── package.json
-├── package-lock.json
-├── .env.example
-├── .gitignore
-└── README.md
+|
+|-- assets/
+|   |-- hero.png
+|   |-- aplicacion funcionando.png
+|   |-- liveoverview.png
+|   |-- cameraprivacyallow.png
+|   |-- privacy.png
+|   `-- resultados.png
+|
+|-- src/
+|   |-- main.ts
+|   |-- preload.ts
+|   |-- capture.ts
+|   |-- camera.ts
+|   |-- measurements.ts
+|   |-- model.ts
+|   `-- errors.ts
+|
+|-- ui/
+|   |-- index.html
+|   |-- app.ts
+|   |-- chart.ts
+|   |-- session.ts
+|   |-- toasts.ts
+|   `-- style.css
+|
+|-- tests/
+|   |-- core.test.mjs
+|   |-- desktop.test.mjs
+|   `-- renderer.test.mjs
+|
+|-- build.mjs
+|-- tsconfig.json
+|-- package.json
+|-- package-lock.json
+|-- .env.example
+|-- .gitignore
+`-- README.md
 ```
 
-The architecture separates native sensing from presentation logic and session management.
+### Main Components
+
+**Electron Main Process — `src/main.ts`**
+
+Creates the desktop window, manages IPC handlers, loads the application configuration, and coordinates native capture operations.
+
+**Preload — `src/preload.ts`**
+
+Exposes a narrow application interface to the renderer while maintaining process isolation.
+
+**Capture Service — `src/capture.ts`**
+
+Manages SmartSpectra initialization, camera selection, processing events, measurement reception, and SDK lifecycle.
+
+**Camera Service — `src/camera.ts`**
+
+Discovers available cameras and converts SDK camera frames into renderer-compatible preview data.
+
+**Measurement Processing — `src/measurements.ts`**
+
+Filters and validates physiological measurements before they are presented.
+
+**Renderer — `ui/app.ts`**
+
+Coordinates user interactions, live measurements, monitoring states, and dashboard updates.
+
+**Breathing Session — `ui/session.ts`**
+
+Manages phase timing, session progression, and pause/resume behavior.
+
+**Toast System — `ui/toasts.ts`**
+
+Provides contextual, reusable notification handling.
 
 ---
 
 ## Getting Started
 
-### Requirements
+### System Requirements
 
 - Windows 11 x64.
-- Node.js compatible with the installed SmartSpectra SDK.
+- Node.js 24 or newer, compatible with the installed SDK.
 - npm.
 - A supported webcam.
-- A Presage SmartSpectra API key.
-- Internet access for SDK services when required.
+- A valid Presage SmartSpectra API key.
+- Network access for SmartSpectra services when required.
 
-### 1. Clone the repository
+### 1. Clone the Repository
 
 ```bash
 git clone https://github.com/Ezequie1Sc/PulseFlow.git
 cd PulseFlow
 ```
 
-### 2. Install dependencies
+### 2. Install Dependencies
 
 ```bash
 npm ci
 ```
 
-### 3. Configure SmartSpectra
+The installation uses the dependency versions recorded in `package-lock.json`.
 
-Create a local environment file.
+### 3. Configure Your API Key
 
-**PowerShell:**
+Create a local `.env` file using `.env.example`.
+
+On Windows PowerShell:
 
 ```powershell
 Copy-Item .env.example .env
 ```
 
-Open `.env` and provide your Presage API key using the configured variable:
+Open `.env` and configure the SmartSpectra key:
 
 ```dotenv
 SMARTSPECTRA_API_KEY=your_presage_api_key
 ```
 
-Never commit the real API key.
+**Never commit your actual API key to a public repository.**
+
+The `.env` file is excluded through `.gitignore`.
 
 ### 4. Launch PulseFlow
 
@@ -346,30 +471,31 @@ Never commit the real API key.
 npm run dev
 ```
 
-This command builds the application and launches Electron.
+This command validates and builds the application before launching Electron.
 
-### 5. Start monitoring
+### 5. Begin Monitoring
 
-1. Review the consent information.
-2. Allow camera-based monitoring.
-3. Select the webcam.
+1. Open PulseFlow.
+2. Review the privacy and camera consent information.
+3. Select an available webcam.
 4. Start monitoring.
-5. Position your face and upper chest within the frame.
-6. Remain still while the SDK acquires valid signals.
-7. Observe live measurements.
-8. Start a guided breathing exercise.
-9. Review the resulting session summary.
+5. Position your face and upper chest within the camera frame.
+6. Maintain appropriate lighting and minimize movement.
+7. Wait for SmartSpectra to produce valid measurements.
+8. Observe heart rate and breathing rate values in the dashboard.
+9. Start a guided breathing session if desired.
+10. Review the session summary.
 
 ---
 
 ## Development Commands
 
-| Command | Purpose |
+| Command | Description |
 |---|---|
-| `npm ci` | Install dependencies from the lockfile |
-| `npm run build` | Run TypeScript validation and build the application |
-| `npm run dev` | Build and launch Electron |
-| `npm start` | Launch Electron |
+| `npm ci` | Install project dependencies |
+| `npm run build` | Type-check and bundle the application |
+| `npm run dev` | Build and launch the Electron application |
+| `npm start` | Launch the existing Electron build |
 | `npm test` | Run automated tests |
 
 ### Build
@@ -378,161 +504,204 @@ This command builds the application and launches Electron.
 npm run build
 ```
 
-### Test
+### Run Automated Tests
 
 ```bash
 npm test
 ```
 
-The test suite covers core functionality such as:
+The test suite includes coverage of:
 
-- Session phase timing.
+- Session timing and phase progression.
 - Pause and resume behavior.
+- Session configuration.
 - Session summary calculations.
-- Measurement decoding and filtering.
-- Toast deduplication.
-- Error handling.
+- Protocol Buffers measurement decoding.
+- Measurement validation and filtering.
+- Notification deduplication.
+- SDK error messaging.
+- Electron security expectations.
 - Consent and session controls.
-- Electron security behavior.
 
-Automated tests and successful builds do not independently establish successful physiological sensing. Real-camera testing is required to verify the complete integration.
+**Testing note:** The project has previously completed 7 of 8 automated tests successfully. The desktop security test reported a Windows-specific `Window unavailable` failure in the original test harness. Re-run the suite and verify the current result before considering all tests passed.
+
+Real-camera operation must be verified separately from automated tests.
 
 ---
 
-## Privacy, Consent & Responsible Data Handling
+## Consent and Data Handling
 
-Privacy is a central requirement of the PulseFlow experience.
+PulseFlow is designed around explicit user participation and transparent camera-based sensing.
 
-### Consent
+### Camera Consent
 
-Camera monitoring is initiated only after explicit user consent.
+Monitoring requires the user's explicit consent.
 
-Users can stop monitoring and end the current session.
+The application provides a consent workflow before beginning camera-based capture.
 
-### Camera data
+The user can stop monitoring and terminate a session.
 
-The application uses a webcam and Presage SmartSpectra to obtain physiological estimates.
+### Camera Input
 
-A local camera preview is available in the desktop interface. Demo screenshots and recordings should obscure identifying imagery when necessary.
+PulseFlow uses a standard webcam through the SmartSpectra SDK.
 
-### Session information
+The application can display a local camera preview while processing physiological signals.
 
-The application uses measurement data to display live values, charts, and session summaries.
+Demo screenshots may obscure the participant's appearance to protect their identity while retaining visible physiological measurements.
 
-The architecture does not depend on a dedicated user database or cloud account system.
+### Physiological Measurements
 
-Session data is intended to remain temporary and under the user's control.
+SmartSpectra produces physiological estimates from camera input.
 
-### Storage and retention
+PulseFlow uses accepted measurements to update live charts and calculate session summaries.
 
-PulseFlow does not implement a dedicated persistent physiological-history database.
+### Storage and Retention
 
-Any claim about local files, logs, caches, or native SDK retention must be verified against the specific application build and Presage SDK behavior.
+PulseFlow does not implement a dedicated persistent physiological-history database or require user accounts.
 
-### SDK telemetry and network activity
+The application is designed to use measurement information for live interactions and temporary session summaries.
 
-The SmartSpectra initialization includes:
+Users should review the current implementation and the SDK documentation for details about native caches, operational logs, and any provider-side retention.
+
+### Data Sharing and Network Communication
+
+PulseFlow uses the Presage SmartSpectra SDK and may require network connectivity for SDK services.
+
+The application configures:
 
 ```typescript
 enableTelemetry: false
 ```
 
-This disables the configurable telemetry option in the application.
+This disables the configurable SDK telemetry option used by PulseFlow.
 
-It does not necessarily disable every SDK network interaction, authentication request, or other provider-side data processing.
+It should not be interpreted as proof that all SDK authentication, operational communication, or provider-side processing is disabled.
 
-For authoritative information about SDK behavior and provider data practices, consult the official Presage documentation.
+Refer to Presage's official documentation for authoritative information about its network behavior, telemetry, and data handling.
 
-### Optional AI services
+### Optional AI Services
 
-PulseFlow does not require a separate generative AI service for physiological monitoring or guided breathing.
+PulseFlow does not require an external generative AI service to calculate physiological measurements or execute guided breathing sessions.
 
-### Responsible use
+### Deletion and Session Control
+
+The application includes user controls for stopping monitoring and managing session state.
+
+Temporary session measurements are intended for the active application experience rather than persistent storage.
+
+### Responsible Use
 
 PulseFlow is not intended for:
 
 - Medical diagnosis.
-- Medical treatment.
+- Disease detection.
+- Treatment recommendations.
 - Clinical decision-making.
-- Emergency response.
-- Covert monitoring.
-- Non-consensual surveillance.
+- Emergency monitoring.
+- Non-consensual monitoring.
+- Covert surveillance.
 
-All physiological values are estimates and should not be interpreted as medical findings.
+**PulseFlow is a non-medical, experimental wellness and human-sensing application.**
 
 ---
 
 ## Troubleshooting
 
-### Camera unavailable
+### Camera Not Detected
 
-Check Windows camera permissions, close competing camera applications, and confirm the camera is connected.
+- Verify Windows desktop camera permissions.
+- Close other applications using the camera.
+- Check the webcam connection.
+- Refresh the available camera list.
 
-### Waiting for signal
+### Waiting for Signal
 
-Improve lighting, reduce motion, ensure your face and upper chest are visible, and allow time for valid measurements.
+A visible camera image does not automatically mean physiological measurements are available.
 
-### Frame rate too low
+To improve signal acquisition:
 
-Use a camera mode capable of maintaining at least 25 FPS. A lower resolution at 30 FPS may work better on some hardware.
+- Use even, frontal lighting.
+- Keep the face visible.
+- Include the upper chest in the frame.
+- Reduce body and head movement.
+- Allow time for stable signals.
+- Check camera frame rate and resolution.
 
-### SDK connectivity error
+### Insufficient Frame Rate
 
-Verify internet access, API key configuration, and connectivity to the required Presage services.
+SmartSpectra can report that the effective camera frame rate is insufficient.
 
-### Missing measurements
+Try a supported camera configuration with at least 25 FPS, preferably 30 FPS.
 
-PulseFlow only displays accepted SDK measurements. Invalid or unstable values are intentionally excluded.
+Lowering capture resolution may help on some devices.
+
+### Presage Connectivity Error
+
+If the SDK reports a connection problem:
+
+- Verify internet connectivity.
+- Confirm the API key is configured.
+- Check whether Presage services are reachable.
+- Restart monitoring after resolving the connection issue.
+
+### No Measurements Available
+
+PulseFlow rejects unavailable or invalid measurements.
+
+It does not replace missing data with artificial values.
 
 ---
 
-## Demo & Challenge Submission
+## Presage SmartSpectra SDK Challenge 2026
 
-PulseFlow was developed for the **Presage SmartSpectra SDK Challenge 2026** on DEV Community.
+PulseFlow was developed as an entry for the **Presage SmartSpectra SDK Challenge 2026**, hosted on DEV Community.
 
-The demonstration highlights:
+### Challenge Focus
 
-1. Desktop application startup.
-2. Camera consent.
-3. Native SmartSpectra integration.
-4. Real-time physiological measurements.
-5. Guided breathing.
-6. Session completion.
-7. Measurement-based summary results.
+Build an interactive experience that responds meaningfully to real-time human signals captured through a camera.
 
-**Demo video:** To be added before final submission.
+### Submission Categories
 
-**DEV submission:** To be added after publication.
+**Best Overall Human-Sensing Experience**
 
-### Challenge Categories
+PulseFlow demonstrates the use of real-time physiological sensing through a simple desktop experience.
 
-- Best Overall Human-Sensing Experience
-- Best Thoughtful Real-World Use
+**Best Thoughtful Real-World Use**
 
-The application combines the use of live camera-based physiological signals with user-controlled monitoring, a minimal interaction model, and an approachable guided experience.
+PulseFlow explores a consent-based wellness interaction that combines physiological visualization, guided breathing, and session feedback.
+
+### Submission Resources
+
+| Resource | Link |
+|---|---|
+| Source Code | [GitHub Repository](https://github.com/Ezequie1Sc/PulseFlow) |
+| Video Demonstration | [Watch on YouTube](https://youtu.be/8ztd4aoxduk) |
+| SmartSpectra SDK | [Official Documentation](https://smartspectra.presagetech.com/docs/nodejs/) |
+| SmartSpectra Repository | [Official GitHub](https://github.com/Presage-Security/SmartSpectra) |
+| Challenge Platform | [DEV Community](https://dev.to/challenges) |
 
 ---
 
 ## Future Improvements
 
-Potential future development includes:
+Potential enhancements include:
 
-- A camera-preview privacy toggle.
-- Additional breathing patterns.
-- More detailed capture-quality guidance.
-- Camera compatibility diagnostics.
-- Additional accessibility controls.
-- Broader platform support where supported by SmartSpectra.
+- An optional camera-preview privacy toggle.
+- Additional guided breathing patterns.
+- More detailed signal-quality guidance.
+- Improved camera compatibility diagnostics.
+- Expanded accessibility options.
+- Additional desktop platform support where compatible with the SDK.
 
-These are planned possibilities rather than existing features.
+These are proposed future improvements, not features claimed as already implemented.
 
 ---
 
 ## Disclaimer
 
-PulseFlow is an experimental application created for educational, demonstration, and general wellness purposes.
+PulseFlow is an experimental desktop application developed for educational, demonstration, and general wellness purposes.
 
-Camera-based physiological estimates may be affected by lighting, movement, camera quality, capture conditions, and algorithmic limitations.
+Physiological measurements obtained through camera-based sensing may be affected by lighting, camera characteristics, frame rate, movement, and signal quality.
 
 **PulseFlow is not a medical device and must not be used for diagnosis, treatment, or clinical monitoring.**
 
@@ -542,18 +711,24 @@ Camera-based physiological estimates may be affected by lighting, movement, came
 
 **Ezequiel Salazar**
 
-Computer Systems Engineering Student | Software Developer
+Computer Systems Engineering Student & Software Developer
 
-[GitHub](https://github.com/Ezequie1Sc)
+GitHub: [@Ezequie1Sc](https://github.com/Ezequie1Sc)
 
 ---
 
 ## Acknowledgments
 
-Built with the [Presage SmartSpectra SDK](https://smartspectra.presagetech.com/docs/nodejs/) for the Presage SmartSpectra SDK Challenge 2026.
+Built using the [Presage SmartSpectra SDK](https://smartspectra.presagetech.com/docs/nodejs/) for the **Presage SmartSpectra SDK Challenge 2026**.
 
-Thanks to Presage and DEV Community for supporting experimentation with contactless human sensing.
+Thanks to Presage and DEV Community for encouraging developers to explore responsible, camera-based human sensing.
 
 ---
 
-**PulseFlow — Your body, in real time.**
+<p align="center">
+  <strong>PulseFlow</strong>
+</p>
+
+<p align="center">
+  Your body, in real time.
+</p>
